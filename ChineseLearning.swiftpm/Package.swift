@@ -6,12 +6,6 @@ let package = Package(
     platforms: [
         .iOS(.v17)
     ],
-    products: [
-        .library(
-            name: "ChineseLearning",
-            targets: ["ChineseLearning"]
-        )
-    ],
     targets: [
         .executableTarget(
             name: "ChineseLearning",
