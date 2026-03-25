@@ -1,5 +1,6 @@
 // swift-tools-version: 5.9
 import PackageDescription
+import AppleProductTypes
 
 let package = Package(
     name: "ChineseLearning",
@@ -10,20 +11,14 @@ let package = Package(
         .iOSApplication(
             name: "ChineseLearning",
             targets: ["ChineseLearning"],
-            bundleIdentifier: "com.example.chineselearning",
-            teamIdentifier: "",
-            displayVersion: "1.0",
-            bundleVersion: "1",
-            appIcon: .placeholder(icon: .book),
-            accentColor: .presetColor(.blue),
             supportedDeviceFamilies: [
                 .pad,
                 .phone
             ],
             supportedInterfaceOrientations: [
                 .portrait,
-                .landscapeLeft,
-                .landscapeRight
+                .landscapeRight,
+                .landscapeLeft
             ]
         )
     ],

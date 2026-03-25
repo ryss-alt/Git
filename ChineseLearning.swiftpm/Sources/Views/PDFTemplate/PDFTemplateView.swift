@@ -27,7 +27,6 @@ struct PDFTemplateView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                // Category filter
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 8) {
                         FilterChip(title: "すべて", isSelected: filterCategory == nil) {
@@ -83,13 +82,11 @@ struct PDFTemplateView: View {
                     }
                     .disabled(selectedCardIDs.isEmpty || isGenerating)
                 }
-
                 ToolbarItem(placement: .secondaryAction) {
                     Button("すべて選択") {
                         selectedCardIDs = Set(filteredCards.map(\.id))
                     }
                 }
-
                 ToolbarItem(placement: .secondaryAction) {
                     Button("選択解除") {
                         selectedCardIDs.removeAll()
@@ -113,9 +110,7 @@ struct PDFTemplateView: View {
         await MainActor.run {
             generatedPDFData = data
             isGenerating = false
-            if data != nil {
-                showShareSheet = true
-            }
+            if data != nil { showShareSheet = true }
         }
     }
 

@@ -41,8 +41,6 @@ final class ListeningHubViewModel {
     }
 
     func openResource(_ resource: ListeningResource) {
-        // Try deep link first, fall back to standard URL
-        let urlString = resource.deepLinkURL ?? resource.url
         if let deepURL = resource.deepLinkURL.flatMap({ URL(string: $0) }),
            UIApplication.shared.canOpenURL(deepURL) {
             UIApplication.shared.open(deepURL)
