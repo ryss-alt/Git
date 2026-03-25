@@ -45,7 +45,7 @@ struct PDFTemplateView: View {
 
                 Divider()
 
-                List(filteredCards, selection: $selectedCardIDs) { card in
+                List(filteredCards) { card in
                     HStack {
                         Image(systemName: selectedCardIDs.contains(card.id) ? "checkmark.circle.fill" : "circle")
                             .foregroundStyle(selectedCardIDs.contains(card.id) ? Color.accentColor : .secondary)

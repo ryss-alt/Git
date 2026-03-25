@@ -7,7 +7,7 @@ let package = Package(
         .iOS(.v17)
     ],
     products: [
-        .library(
+        .iOSApplication(
             name: "ChineseLearning",
             targets: ["ChineseLearning"]
         )
