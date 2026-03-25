@@ -19,20 +19,24 @@ struct SeedDataLoader {
     }
 
     static func loadIfNeeded(context: ModelContext) {
-        let defaults = UserDefaults.standard
-        let seedKey = "seedDataLoaded_v1"
-        guard !defaults.bool(forKey: seedKey) else { return }
+        // Use DB count as source of truth — UserDefaults can be stale
+        let count = (try? context.fetchCount(FetchDescriptor<VocabularyCard>())) ?? 0
+        guard count == 0 else { return }
 
-        let files = ["hsk3_4", "hsk1_2", "business"]
+        let files = ["hsk1_2", "hsk3_4", "business"]
         for filename in files {
             loadFile(named: filename, context: context)
         }
 
-        defaults.set(true, forKey: seedKey)
+        try? context.save()
     }
 
     private static func loadFile(named filename: String, context: ModelContext) {
-        guard let url = Bundle.main.url(forResource: filename, withExtension: "json", subdirectory: "VocabularyData"),
+        // Try with subdirectory first, then flat (Swift Playgrounds 4 bundle layout varies)
+        let url = Bundle.main.url(forResource: filename, withExtension: "json", subdirectory: "VocabularyData")
+            ?? Bundle.main.url(forResource: filename, withExtension: "json")
+
+        guard let url,
               let data = try? Data(contentsOf: url),
               let seed = try? JSONDecoder().decode(SeedFile.self, from: data)
         else {
@@ -54,10 +58,5 @@ struct SeedDataLoader {
         }
 
         print("SeedDataLoader: Loaded \(seed.cards.count) cards from \(filename).json")
-    }
-
-    /// Resets seed data (for testing or re-seeding after update).
-    static func reset() {
-        UserDefaults.standard.removeObject(forKey: "seedDataLoaded_v1")
     }
 }

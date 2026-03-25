@@ -23,7 +23,11 @@ final class ListeningHubViewModel {
     }
 
     private func loadResources() {
-        guard let url = Bundle.main.url(forResource: "resources", withExtension: "json", subdirectory: "ListeningResources"),
+        // Try with subdirectory first, then flat
+        let url = Bundle.main.url(forResource: "resources", withExtension: "json", subdirectory: "ListeningResources")
+            ?? Bundle.main.url(forResource: "resources", withExtension: "json")
+
+        guard let url,
               let data = try? Data(contentsOf: url)
         else {
             print("ListeningHubViewModel: Could not load resources.json")
