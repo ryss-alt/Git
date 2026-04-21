@@ -1,0 +1,111 @@
+brand:
+  name_ja: "iPhone × Claude × セカンドブレイン"
+  name_en: "iPhone × Claude × Second Brain"
+  tagline_ja: "AI と一緒に暮らす知的生産の実験記"
+  tagline_en: "Claude-powered Second Brain for an iPhone-only workflow"
+  launch_month: "2026-04"
+
+persona:
+  first_person_ja: "私"
+  first_person_en: "I"
+  tone:
+    - 冷静
+    - 実験報告的
+    - 数値で語る
+    - 感嘆符を多用しない
+    - 断定しない
+  audience_ja:
+    - 20〜40 代会社員
+    - 副業志望者
+    - 生産性オタク
+    - PKM / セカンドブレイン関心層
+  audience_en:
+    - Knowledge workers 25-45
+    - Notion enthusiasts
+    - ADHD / neurodivergent productivity seekers
+    - Tiago Forte Second Brain followers looking for cheaper tools
+
+positioning:
+  niche:
+    - PC を使わず iPhone だけで知的生産を回す
+    - Claude（AI）を第二の脳のエンジンにする
+    - Notion の Second Brain テンプレを AI 時代にアップデート
+  differentiation:
+    - iPhone-only という物理制約をストーリーに昇華
+    - Tiago Forte 的な高額コースではなく、月額 980 円 / $19 で使える実装を提供
+    - 毎週の実験ログという継続コンテンツで学びが古びない
+
+voice_rules:
+  must_do:
+    - 冒頭に「本記事は AI 支援のもと執筆しています」を入れる
+    - 効果は数値で示す（時間削減、クリック数、記憶再生率など）
+    - 失敗も記録する（うまくいかなかった実験こそ価値）
+    - セクション見出しは行動動詞で始める（「試す」「測る」「振り返る」）
+  never_do:
+    - 「絶対」「必ず」「100%」「確実に」の使用
+    - 効果効能の断定（薬機法）
+    - 他者の文章の無断引用
+    - 単なる AI 一般論の羅列（体験に紐づけない記述は禁止）
+
+pricing:
+  note_free_article:
+    price: 0
+    length_chars: [1500, 2500]
+    purpose: "集客・SEO・マガジン試読"
+  note_monthly_magazine:
+    price: 980
+    frequency_per_month: 4
+    length_chars: [2500, 4000]
+    purpose: "定期購読の主収益源"
+  note_paid_single:
+    price: 1980
+    length_chars: [6000, 10000]
+    purpose: "単発高単価、検索流入から購入される"
+  etsy_basic_template:
+    price_usd: 19
+    purpose: "Second Brain 基本形"
+  etsy_adhd_template:
+    price_usd: 24
+    purpose: "ADHD 向けゲーミフィケーション"
+  etsy_prompt_library:
+    price_usd: 9
+    purpose: "客単価低めのエントリー商品"
+
+kpi:
+  month_1:
+    note_subscribers: 30
+    revenue_jpy: 39000
+  month_3:
+    note_subscribers: 80
+    etsy_monthly_sales: 30
+    revenue_jpy: 152000
+  month_6:
+    note_subscribers: 120
+    etsy_monthly_sales: 50
+    revenue_jpy: 252000
+    status: "生活費ライン突破ポイント"
+  month_12:
+    note_subscribers: 150
+    etsy_monthly_sales: 50
+    revenue_jpy: 299000
+
+content_series:
+  weekly_experiments:
+    format: "Week NN: <実験テーマ>"
+    structure:
+      - 動機（なぜこの実験をしたか）
+      - 手順（iPhone と Claude でどうやったか）
+      - 結果（数値と具体例）
+      - 振り返り（次週への引き継ぎ）
+  examples:
+    - "iPhone だけで Zettelkasten を運用する"
+    - "Claude に毎朝ブリーフィングをさせる"
+    - "会議メモを音声入力 → Claude で要約 → Second Brain 格納"
+    - "読書ノートを Claude で Permanent Note 化"
+    - "週次レビューを Claude に代行させる"
+
+compliance:
+  ai_disclosure_required: true
+  affiliate_links_allowed: false
+  pr_tag_required_when_mentioning_other_services: true
+  ng_words_file: "scripts/ng_words.yaml"
